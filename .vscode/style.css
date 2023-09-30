@@ -31,6 +31,7 @@ body {
   background: var(--bg-url);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
   font-family: "Work Sans", sans-serif;
   color: var(--text-color);
   display: flex;
@@ -80,7 +81,13 @@ body {
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.4s;
   
+}
+
+#Switch button:hover{
+  outline: 8px solid var(--hightlight-color);
 }
 
 #Switch span{
@@ -94,8 +101,7 @@ body {
 }
 
 .light #Switch button{
-  right: 0;
-  left: inherit
+  animation: slide-in 0.4s forwards;
   
 
 }
@@ -164,4 +170,22 @@ footer {
   text-align: center;
   font-size: 14px;
   font-weight: 300;
+}
+
+@keyframes slide-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
 }
